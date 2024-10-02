@@ -1,9 +1,10 @@
 package at.twinformatics.lehrlinge.jdbc;
 
-import at.twinformatics.lehrlinge.jdbc.Student;
-import at.twinformatics.lehrlinge.jdbc.StudentSelectFromDatabase;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.Mock;
 import org.mockito.Mockito;
+import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -13,23 +14,23 @@ import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+@ExtendWith(MockitoExtension.class)
 class StudentSelectFromDatabaseMockitoTest {
+    @Mock
+    Connection connection;
+    @Mock
+    PreparedStatement preparedStatement;
+    @Mock
+    ResultSet resultSet;
 
     @Test
-    void verify_selectAll() {
+    void verify_selectAll_NoRows() {
         // Given
-        Connection connection;
-        PreparedStatement preparedStatement;
-        ResultSet resultSet;
         try {
-            connection = Mockito.mock(Connection.class);
-            preparedStatement = Mockito.mock(PreparedStatement.class);
-            resultSet = Mockito.mock(ResultSet.class);
             Mockito.when(connection.prepareStatement(Mockito.anyString())).thenReturn(preparedStatement);
             Mockito.when(preparedStatement.executeQuery()).thenReturn(resultSet);
             Mockito.when(resultSet.next()).thenReturn(false);
-        }
-        catch (SQLException e) {
+        } catch (SQLException e) {
             throw new RuntimeException("Failed at preparing mocks", e);
         }
 

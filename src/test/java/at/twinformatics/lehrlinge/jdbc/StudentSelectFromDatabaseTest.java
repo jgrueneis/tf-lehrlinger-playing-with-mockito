@@ -1,8 +1,6 @@
 package at.twinformatics.lehrlinge.jdbc;
 
 
-import at.twinformatics.lehrlinge.jdbc.Student;
-import at.twinformatics.lehrlinge.jdbc.StudentSelectFromDatabase;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
@@ -23,12 +21,17 @@ class StudentSelectFromDatabaseTest {
         connection = DriverManager.getConnection("jdbc:h2:mem:test;DB_CLOSE_DELAY=-1");
         Statement statement = connection.createStatement();
         statement.execute("""
-            CREATE TABLE STUDENTS (ID INT PRIMARY KEY, FIRST_NAME VARCHAR(50), LAST_NAME VARCHAR(50), DATE_OF_BIRTH DATE)
-            """);
+                CREATE TABLE STUDENTS (
+                    ID INT PRIMARY KEY, 
+                    FIRST_NAME VARCHAR(50), 
+                    LAST_NAME VARCHAR(50), 
+                    DATE_OF_BIRTH DATE
+                )
+                """);
     }
 
     @Test
-    void verify_selectAll() {
+    void verify_selectAll_NoRowsFound() {
         StudentSelectFromDatabase studentSelectFromDatabase = new StudentSelectFromDatabase(connection);
         List<Student> students = studentSelectFromDatabase.selectAll();
         assertThat(students).isNotNull().isEmpty();
