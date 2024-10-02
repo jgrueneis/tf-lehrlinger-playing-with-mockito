@@ -1,6 +1,8 @@
-package tf.lehrlinge.jdbc;
+package at.twinformatics.lehrlinge.jdbc;
 
 
+import at.twinformatics.lehrlinge.jdbc.Student;
+import at.twinformatics.lehrlinge.jdbc.StudentSelectFromDatabase;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 

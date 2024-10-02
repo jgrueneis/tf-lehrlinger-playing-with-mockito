@@ -1,4 +1,4 @@
-package tf.lehrlinge.jdbc.fw;
+package at.twinformatics.lehrlinge.jdbc.fw;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

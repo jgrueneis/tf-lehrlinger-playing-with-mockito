@@ -1,4 +1,4 @@
-package tf.lehrlinge;
+package at.twinformatics.lehrlinge;
 
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;

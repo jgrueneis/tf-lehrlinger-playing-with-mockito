@@ -1,4 +1,4 @@
-package tf.lehrlinge.jdbc.fw;
+package at.twinformatics.lehrlinge.jdbc.fw;
 
 public class DatabaseException extends RuntimeException {
     private DatabaseException(String message, Throwable cause) {

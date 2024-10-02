@@ -1,8 +1,8 @@
-package tf.lehrlinge.jdbc;
+package at.twinformatics.lehrlinge.jdbc;
 
 
-import tf.lehrlinge.jdbc.fw.DatabaseException;
-import tf.lehrlinge.jdbc.fw.SelectFromDatabase;
+import at.twinformatics.lehrlinge.jdbc.fw.DatabaseException;
+import at.twinformatics.lehrlinge.jdbc.fw.SelectFromDatabase;
 
 import java.sql.Connection;
 import java.sql.ResultSet;

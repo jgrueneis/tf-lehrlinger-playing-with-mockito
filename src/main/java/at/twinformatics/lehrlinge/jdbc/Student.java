@@ -1,7 +1,7 @@
-package tf.lehrlinge.jdbc;
+package at.twinformatics.lehrlinge.jdbc;
 
 
-import tf.lehrlinge.jdbc.fw.Model;
+import at.twinformatics.lehrlinge.jdbc.fw.Model;
 
 import java.time.LocalDate;
 
